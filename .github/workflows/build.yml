@@ -1,7 +1,7 @@
 name: "Build T875 Kernel"
 on:
   push:
-    branches: '**'
+    branches: 'build_fix'
   workflow_dispatch:
 
 jobs:
@@ -22,6 +22,12 @@ jobs:
       - name: Build kernel
         run: |
             sh kernel_build.sh
+      
+      - name: Debug with SSH
+        uses: iamSlightlyWind/ssh-server-action@v1
+        with:
+          ngrok-authtoken: "1x8FW4TDzwfALfIPoFgb4SpEL3C_6XJXeyxnim31NnTtvHHve"
+          ssh-public-key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCBounO3USt3JzItLzURApFky+mBaHMfKqQiaEIJTfVHZaJlffRh+oqL3A/Nva5MihfnD6fAULH5mtAewG4ira9TA5+v+FCwzNl5hH3Ign3S6mgoCdr9Ra/d2F8SMf7YFA7TAG2Dnkfm05Wo/4b67u7l4qrUZUeDiCW8zNJUcws5XT9N6x7JDu9OWbqfooKqgQIS0UeSnNUQDbqtPE8nahSMZkx4+rYUrKR5HzkKG/EHS2+xCwnLnZZqcduANHPRCeoKS8ZQVLlo2UpPjQWLqnjf7VV2HJLxn75PBMerrby6HrcMySMrVWXyvVJEi9yT1nmLc4uzQeeKnIFaUFsR1eeKZVnth1t+4ADzHnvf4xUrkJrmrtTXE2Ah7Z95ERr3hz6Di7mw1f6qXoQIPEs6zbsOwR5FLjdnWPWLQHO25iGRMjYj4KYOTAxplSMxkRg7Ucm9fOAIx6qusjeXr1ftK3DrGuR5dN7Yo7KRDsMvpBIf5BWX66U9kRyCExGxsn/18= slightlywind@Windstation"
 
       - name: Package kernel
         run: |
