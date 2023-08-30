@@ -4,3 +4,6 @@
 [submodule "toolchain/clang"]
 	path = toolchain/clang
 	url = https://github.com/kdrag0n/proton-clang
+[submodule "release"]
+	path = release
+	url = https://github.com/osm0sis/AnyKernel3
