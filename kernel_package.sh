@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir compiled
-
 cat out/arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb \
     out/arch/arm64/boot/dts/vendor/qcom/kona-v2.dtb \
     out/arch/arm64/boot/dts/vendor/qcom/kona.dtb \
